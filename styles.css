@@ -10,11 +10,13 @@ body {
 }
 
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
   border-bottom: 1px solid #ddd;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .main-nav ul {
@@ -28,13 +30,6 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: 500;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 2rem;
-  padding: 2rem;
 }
 
 .featured {
