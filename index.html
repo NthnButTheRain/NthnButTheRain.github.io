@@ -3,15 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>MCU News</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Helps screen readers understand page purpose -->
+  <meta name="description" content="Unofficial Marvel Cinematic Universe news, rumors, and release updates." />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">LOGO</div>
+  <!-- Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <nav class="main-nav">
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="logo">
+      <a href="/" aria-label="MCU News homepage">LOGO</a>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
         <li><a href="#">Movies</a></li>
         <li><a href="#">TV</a></li>
@@ -22,72 +32,60 @@
     </nav>
 
     <div class="header-actions">
-      <a href="#">Search</a>
+      <button type="button" aria-label="Search site">Search</button>
       <a href="#">Subscribe</a>
     </div>
   </header>
 
   <!-- Main content -->
-  <main class="layout">
+  <main id="main-content" class="layout" role="main">
 
-    <!-- Left content -->
-    <section class="content">
+    <!-- Articles -->
+    <section class="content" aria-labelledby="latest-news-heading">
+      <h2 id="latest-news-heading" class="visually-hidden">Latest MCU News</h2>
 
       <!-- Featured article -->
       <article class="featured">
-        <h1>FEATURED HEADLINE</h1>
-        <p class="subheadline">Subheadline text</p>
-        <span class="meta">Category • Time</span>
-        <a href="#" class="read-more">Read More →</a>
+        <h1>Featured Headline</h1>
+
+        <p class="subheadline">
+          Subheadline text
+        </p>
+
+        <p class="meta">
+          <span class="category">Movies</span> •
+          <time datetime="2026-01-27">2 hours ago</time>
+        </p>
+
+        <a href="#" class="read-more">
+          Read more<span class="visually-hidden"> about Featured Headline</span>
+        </a>
       </article>
 
-      <!-- Article grid -->
-      <section class="article-grid">
+      <!-- Article list -->
+      <section class="article-grid" aria-label="More articles">
         <article class="card">
-          <h3>Headline goes here</h3>
-          <span class="meta">Category • Time</span>
+          <h3>
+            <a href="#">Headline goes here</a>
+          </h3>
+          <p class="meta">
+            <span class="category">TV</span> •
+            <time datetime="2026-01-26">Yesterday</time>
+          </p>
         </article>
 
         <article class="card">
-          <h3>Headline goes here</h3>
-          <span class="meta">Category • Time</span>
+          <h3>
+            <a href="#">Headline goes here</a>
+          </h3>
+          <p class="meta">
+            <span class="category">Rumors</span> •
+            <time datetime="2026-01-25">2 days ago</time>
+          </p>
         </article>
 
         <article class="card">
-          <h3>Headline goes here</h3>
-          <span class="meta">Category • Time</span>
-        </article>
-      </section>
-
-    </section>
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <section>
-        <h4>Trending</h4>
-      </section>
-
-      <section>
-        <h4>Upcoming Releases</h4>
-      </section>
-
-      <section>
-        <h4>Follow Us</h4>
-      </section>
-    </aside>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <nav>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-    </nav>
-    <p>© Unofficial Fan Project</p>
-  </footer>
-
-</body>
-</html>
+          <h3>
+            <a href="#">Headline goes here</a>
+          </h3>
+          <p class="meta">
