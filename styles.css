@@ -32,6 +32,14 @@ body {
   justify-self: end;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px; /* content + sidebar width */
+  gap: 2rem;
+  padding: 2rem 0; /* vertical spacing only */
+  align-items: start;
+}
+
 .main-nav ul {
   display: flex;
   list-style: none;
