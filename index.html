@@ -1,87 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>The Marvel Cinematic Universe Resource</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Helps screen readers understand page purpose -->
-  <meta name="description" content="Unofficial Marvel Cinematic Universe news, rumors, and release updates." />
-
-  <link rel="stylesheet" href="styles.css" />
-</head>
 <body>
 
   <!-- Skip link for keyboard users -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header -->
-<header class="site-header">
-  <div class="container">
+  <header class="site-header">
+    <div class="container">
 
-    <!-- Logo -->
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/tmcurlogo.png" alt="TMCUR logo">
-      </a>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/tmcurlogo.png" alt="TMCUR logo">
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="tv.html">TV</a></li>
+          <li><a href="rumors.html">Rumors</a></li>
+          <li><a href="characters.html">Characters</a></li>
+          <li><a href="release-dates.html">Release Dates</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header actions -->
+      <div class="header-actions">
+        <button type="button">Search</button>
+        <a href="subscribe.html">Subscribe</a>
+      </div>
+
     </div>
-
-    <!-- Navigation -->
-    <nav class="main-nav" aria-label="Primary navigation">
-      <ul>
-        <li><a href="movies.html">Movies</a></li>
-        <li><a href="#">TV</a></li>
-        <li><a href="#">Rumors</a></li>
-        <li><a href="#">Characters</a></li>
-        <li><a href="#">Release Dates</a></li>
-      </ul>
-    </nav>
-
-    <!-- Header actions -->
-    <div class="header-actions">
-      <button type="button">Search</button>
-      <a href="#">Subscribe</a>
-    </div>
-
-  </div>
-</header>
-
+  </header>
 
   <!-- Main content -->
-  <main id="main-content" role="main">
-  <div class="container">
+  <main id="main-content">
+    <div class="container">
 
-    <!-- Articles -->
-    <section class="content" aria-labelledby="latest-news-heading">
-      <h2 id="latest-news-heading" class="visually-hidden">Latest MCU News</h2>
+      <!-- Page title (ONLY H1 on the page) -->
+      <h1>The Marvel Cinematic Universe Resource</h1>
 
-      <!-- Featured article -->
-      <article class="featured">
-        <h1>Featured Headline</h1>
+      <!-- Featured / Latest section -->
+      <section class="content" aria-labelledby="latest-news-heading">
+        <h2 id="latest-news-heading">Latest MCU News</h2>
 
-        <p class="subheadline">
-          Subheadline text
-        </p>
+        <!-- Featured article -->
+        <article class="featured">
+          <h3>Featured Headline</h3>
 
-        <p class="meta">
-          <span class="category">Movies</span> •
-          <time datetime="2026-01-27">2 hours ago</time>
-        </p>
+          <p class="subheadline">
+            Subheadline text
+          </p>
 
-        <a href="#" class="read-more">
-          Read more<span class="visually-hidden"> about Featured Headline</span>
-        </a>
-      </article>
-    </div>
-  </main>
+          <p class="meta">
+            <span class="category">Movies</span> •
+            <time datetime="2026-01-27">2 hours ago</time>
+          </p>
 
+          <a href="#" class="read-more">
+            Read more<span class="visually-hidden"> about Featured Headline</span>
+          </a>
+        </article>
+      </section>
 
-      <!-- Article list -->
-      <section class="article-grid" aria-label="More articles">
+      <!-- More articles -->
+      <section class="article-grid" aria-labelledby="more-articles-heading">
+        <h2 id="more-articles-heading" class="visually-hidden">More articles</h2>
+
         <article class="card">
-          <h3>
-            <a href="#">Headline goes here</a>
-          </h3>
+          <h3><a href="#">Headline goes here</a></h3>
           <p class="meta">
             <span class="category">TV</span> •
             <time datetime="2026-01-26">Yesterday</time>
@@ -89,9 +77,7 @@
         </article>
 
         <article class="card">
-          <h3>
-            <a href="#">Headline goes here</a>
-          </h3>
+          <h3><a href="#">Headline goes here</a></h3>
           <p class="meta">
             <span class="category">Rumors</span> •
             <time datetime="2026-01-25">2 days ago</time>
@@ -99,7 +85,22 @@
         </article>
 
         <article class="card">
-          <h3>
-            <a href="#">Headline goes here</a>
-          </h3>
+          <h3><a href="#">Headline goes here</a></h3>
           <p class="meta">
+            <span class="category">Characters</span> •
+            <time datetime="2026-01-24">3 days ago</time>
+          </p>
+        </article>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Marvel Cinematic Universe Resource</p>
+    </div>
+  </footer>
+
+</body>
