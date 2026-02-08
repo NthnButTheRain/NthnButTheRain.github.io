@@ -13,7 +13,16 @@
 <body>
 
   <!-- Skip link for keyboard users -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+<section id="search-results" aria-live="polite">
+  <h2>Search Results</h2>
+  <ul id="results-list"></ul>
+</section>
+  
+<main id="main-content">
+  <!-- your page content -->
+</main>
 
   <!-- Header -->
   <header class="site-header">
@@ -51,14 +60,14 @@
 
       <!-- Header actions -->
       <div class="header-actions">
-        <form action="#" method="get" class="search-form">
+        <form action="search.html" method="get" class="search-form">
          <label for="search" class="visually-hidden">Search the site</label>
          <input
            type="search"
            id="search"
            name="q"
            placeholder="Search"
-           aria-label="Search the site">
+           required>
          <button type="submit">Search</button>
         </form>
       </div>
