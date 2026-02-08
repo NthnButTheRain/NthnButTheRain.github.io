@@ -24,6 +24,12 @@ body {
   justify-self: start;
 }
 
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
 .main-nav {
   justify-self: center;
 }
