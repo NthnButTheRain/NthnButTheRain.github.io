@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Helps screen readers understand page purpose -->
-  <meta name="description" content="Unofficial Marvel Cinematic Universe movies page." />
+  <meta name="description" content="Unofficial Marvel Cinematic Universe news, rumors, and release updates." />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -17,53 +17,66 @@
 
   <!-- Header -->
   <header class="site-header">
-  <div class="container">
+    <div class="container">
 
-    <div class="logo">LOGO</div>
-
-    <nav class="main-nav" aria-label="Primary navigation">
-      <ul>
-        <li></li><a href="movies.html">Movies</a></li>
-        <li><a href="#">TV</a></li>
-        <li><a href="#">Rumors</a></li>
-        <li><a href="#">Characters</a></li>
-        <li><a href="#">Release Dates</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <button type="button">Search</button>
-      <a href="#">Subscribe</a>
-    </div>
-
-  </div>
-</header>
-
-
-  <!-- Main content -->
-  <main id="main-content" role="main">
-  <div class="container">
-
-    <!-- Articles -->
-    <section class="content" aria-labelledby="latest-news-heading">
-      <h2 id="latest-news-heading" class="visually-hidden">Latest MCU News</h2>
-
-      <!-- Featured article -->
-      <article class="featured">
-        <h1>Featured Headline</h1>
-
-        <p class="subheadline">
-          Subheadline text
-        </p>
-
-        <p class="meta">
-          <span class="category">Movies</span> •
-          <time datetime="2026-01-27">2 hours ago</time>
-        </p>
-
-        <a href="#" class="read-more">
-          Read more<span class="visually-hidden"> about Featured Headline</span>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/TMCURlogo.png" alt="The Marvel Cinematic Universe Resource logo">
         </a>
-      </article>
+      </div>
+
+      <!-- Mobile menu toggle (shows on mobile only) -->
+<button class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav">
+  <span class="visually-hidden">Open menu</span>
+  ☰
+</button>
+
+<!-- Navigation -->
+<nav class="main-nav"
+     id="primary-nav"
+     aria-label="Primary navigation"
+     data-open="false">
+  <ul>
+    <li><a href="movies.html">Movies</a></li>
+    <li><a href="tv.html">TV</a></li>
+    <li><a href="chronology.html">Chronology</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="eastereggs.html">Easter Eggs & Theories</a></li>
+  </ul>
+</nav>
+
+      <!-- Header actions -->
+      <div class="header-actions">
+        <button type="button">Search</button>
+        <a href="subscribe.html">Subscribe</a>
+      </div>
+
     </div>
-  </main>
+  </header>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Marvel Cinematic Universe Resource</p>
+    </div>
+  </footer>
+
+  <!-- Mobile menu JavaScript -->
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#primary-nav");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.getAttribute("data-open") === "true";
+        nav.setAttribute("data-open", String(!isOpen));
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
+  </script>
+
+</body>
