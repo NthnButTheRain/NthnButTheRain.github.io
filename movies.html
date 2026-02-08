@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Movies | Your Site Name</title>
-  <meta name="description" content="Latest movie news and releases.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>MCU News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Helps screen readers understand page purpose -->
+  <meta name="description" content="Unofficial Marvel Cinematic Universe news, rumors, and release updates." />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="movies.html">Movies</a>
-      <a href="tv.html">TV</a>
-      <a href="contact.html">Contact</a>
+
+  <!-- Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+  <div class="container">
+
+    <div class="logo">LOGO</div>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul>
+        <li></li><a href="movies.html">Movies</a></li>
+        <li><a href="#">TV</a></li>
+        <li><a href="#">Rumors</a></li>
+        <li><a href="#">Characters</a></li>
+        <li><a href="#">Release Dates</a></li>
+      </ul>
     </nav>
-  </header>
 
-  <main>
-    <h1>Movies</h1>
-    <p>Movie content goes here.</p>
+    <div class="header-actions">
+      <button type="button">Search</button>
+      <a href="#">Subscribe</a>
+    </div>
+
+  </div>
+</header>
+
+
+  <!-- Main content -->
+  <main id="main-content" role="main">
+  <div class="container">
+
+    <!-- Articles -->
+    <section class="content" aria-labelledby="latest-news-heading">
+      <h2 id="latest-news-heading" class="visually-hidden">Latest MCU News</h2>
+
+      <!-- Featured article -->
+      <article class="featured">
+        <h1>Featured Headline</h1>
+
+        <p class="subheadline">
+          Subheadline text
+        </p>
+
+        <p class="meta">
+          <span class="category">Movies</span> •
+          <time datetime="2026-01-27">2 hours ago</time>
+        </p>
+
+        <a href="#" class="read-more">
+          Read more<span class="visually-hidden"> about Featured Headline</span>
+        </a>
+      </article>
+    </div>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Your Name</p>
-  </footer>
-</body>
-</html>
