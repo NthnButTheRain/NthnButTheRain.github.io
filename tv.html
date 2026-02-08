@@ -2,27 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The Marvel Cinematic Universe Resource</title>
+  <title>TV Series</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Helps screen readers understand page purpose -->
-  <meta name="description" content="Unofficial Marvel Cinematic Universe news, rumors, and release updates." />
-
+  <meta name="description" content="TV series information.">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Skip link for keyboard users -->
+  <!-- Skip link -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-<section id="search-results" aria-live="polite">
-  <h2>Search Results</h2>
-  <ul id="results-list"></ul>
-</section>
-  
-<main id="main-content">
-  <!-- your page content -->
-</main>
 
   <!-- Header -->
   <header class="site-header">
@@ -35,40 +23,40 @@
         </a>
       </div>
 
-      <!-- Mobile menu toggle (shows on mobile only) -->
-<button class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-nav">
-  <span class="visually-hidden">Open menu</span>
-  ☰
-</button>
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="primary-nav">
+        <span class="visually-hidden">Open menu</span>
+        ☰
+      </button>
 
-<!-- Navigation -->
-<nav class="main-nav"
-     id="primary-nav"
-     aria-label="Primary navigation"
-     data-open="false">
-  <ul>
-    <li><a href="movies.html">Movies</a></li>
-    <li><a href="tv.html">TV</a></li>
-    <li><a href="chronology.html">Chronology</a></li>
-    <li><a href="characters.html">Characters</a></li>
-    <li><a href="eastereggs.html">Easter Eggs & Theories</a></li>
-  </ul>
-</nav>
+      <!-- Navigation -->
+      <nav class="main-nav"
+           id="primary-nav"
+           aria-label="Primary navigation"
+           data-open="false">
+        <ul>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="tv.html">TV</a></li>
+          <li><a href="chronology.html">Chronology</a></li>
+          <li><a href="characters.html">Characters</a></li>
+          <li><a href="eastereggs.html">Easter Eggs & Theories</a></li>
+        </ul>
+      </nav>
 
       <!-- Header actions -->
       <div class="header-actions">
         <form action="search.html" method="get" class="search-form">
-         <label for="search" class="visually-hidden">Search the site</label>
-         <input
-           type="search"
-           id="search"
-           name="q"
-           placeholder="Search"
-           required>
-         <button type="submit">Search</button>
+          <label for="search" class="visually-hidden">Search the site</label>
+          <input
+            type="search"
+            id="search"
+            name="q"
+            placeholder="Search"
+            required>
+          <button type="submit">Search</button>
         </form>
       </div>
 
