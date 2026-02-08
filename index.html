@@ -120,11 +120,26 @@
     </div>
   </main>
 
-  <!-- Footer -->
+    <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2026 The Marvel Cinematic Universe Resource</p>
     </div>
   </footer>
 
+  <!-- Mobile menu JavaScript -->
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#primary-nav");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.getAttribute("data-open") === "true";
+        nav.setAttribute("data-open", String(!isOpen));
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
+  </script>
+
 </body>
+
