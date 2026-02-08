@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Marvel Cinematic Universe Resource</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Helps screen readers understand page purpose -->
+  <meta name="description" content="Unofficial Marvel Cinematic Universe news, rumors, and release updates." />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/TMCURlogo.png" alt="The Marvel Cinematic Universe Resource logo">
+        </a>
+      </div>
+
+      <!-- Mobile menu toggle (shows on mobile only) -->
+<button class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav">
+  <span class="visually-hidden">Open menu</span>
+  ☰
+</button>
+
+<!-- Navigation -->
+<nav class="main-nav"
+     id="primary-nav"
+     aria-label="Primary navigation"
+     data-open="false">
+  <ul>
+    <li><a href="movies.html">Movies</a></li>
+    <li><a href="tv.html">TV</a></li>
+    <li><a href="chronology.html">Chronology</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="eastereggs.html">Easter Eggs & Theories</a></li>
+  </ul>
+</nav>
+
+      <!-- Header actions -->
+      <div class="header-actions">
+        <button type="button">Search</button>
+        <a href="subscribe.html">Subscribe</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Marvel Cinematic Universe Resource</p>
+    </div>
+  </footer>
+
+  <!-- Mobile menu JavaScript -->
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#primary-nav");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.getAttribute("data-open") === "true";
+        nav.setAttribute("data-open", String(!isOpen));
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
+  </script>
+
+</body>
