@@ -190,30 +190,30 @@ h1, .subtitle {
   }
 }
 
-.movie-list {
+.media-list {
   display: grid;
   gap: 2rem;
 }
 
-.movie-card {
+.media-card {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
 }
 
-.movie-card img {
+.media-card img {
   max-width: 150px;
   height: auto;
   border-radius: 4px;
 }
 
-.movie-info h2 {
+.media-info h2 {
   margin-top: 0;
 }
 
 /* Mobile layout */
 @media (max-width: 768px) {
-  .movie-card {
+  .media-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
