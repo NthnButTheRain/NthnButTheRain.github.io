@@ -213,13 +213,19 @@ h1, .subtitle {
 
 /* Easter Egg Form Styles */
 
+.user-submission {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .user-submission,
 .community-submissions {
   margin-top: 2rem;
 }
 
 .form-field {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .form-field label {
@@ -229,10 +235,12 @@ h1, .subtitle {
 }
 
 .form-field input,
-.form-field select,
+.form-field select {
+  padding: 0.5rem 0.65rem;
+}
 .form-field textarea {
   width: 100%;
-  max-width: 700px;
+  max-width: 100%;
   padding: 0.6rem 0.7rem;
   border: 1px solid #ccc;
   border-radius: 8px;
