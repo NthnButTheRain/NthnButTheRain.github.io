@@ -218,7 +218,7 @@ h1, .subtitle {
   grid-template-columns: repeat(4, minmax(140px, 1fr));
   gap: 0.75rem;
   align-items: end;
-  max-width: 980px;
+  max-width: 760px;
 }
 
 #egg-form .form-field {
@@ -264,6 +264,15 @@ h1, .subtitle {
   margin-bottom: 0.35rem;
 }
 
+.user-submission .form-field label {
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.user-submission #details {
+  min-height: 90px;
+}
+
 .form-field input,
 .form-field select,
 .form-field textarea {
@@ -274,8 +283,8 @@ h1, .subtitle {
   border-radius: 8px;
 }
 
-.captcha-wrap {
-  margin: 0.75rem 0 1rem;
+.user-submission .captcha-wrap {
+  margin: 0.25rem 0 0.5rem;
 }
 
 .hp-field {
