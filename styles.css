@@ -217,7 +217,7 @@ h1, .subtitle {
   display: grid;
   grid-template-columns: repeat(4, minmax(140px, 1fr));
   gap: 0.75rem;
-  align-items: center;
+  align-items: start;
   max-width: 760px;
   margin: 0 auto;
 }
@@ -232,8 +232,6 @@ h1, .subtitle {
 
 #egg-form .form-field:has(#creditName) {
   grid-column: 4 / span 1;
-  align-self: center;
-  transform: translateY(-10px);
 }
 
 #egg-form .captcha-wrap {
