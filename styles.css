@@ -211,6 +211,42 @@ h1, .subtitle {
   margin-top: 0;
 }
 
+/* Easter Egg Form Styles */
+
+.hp-field {
+  display: none;
+}
+
+.input-error {
+  border-color: #b00020;
+  outline-color: #b00020;
+}
+
+.field-error {
+  color: #b00020;
+  min-height: 1.2em;
+  margin-top: 0.35rem;
+}
+
+.form-success {
+  margin: 0.75rem 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #2e7d32;
+}
+
+.submission-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.submission-list li {
+  padding: 0.9rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
 /* Mobile layout */
 @media (max-width: 768px) {
   .media-card {
