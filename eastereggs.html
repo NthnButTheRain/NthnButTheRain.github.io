@@ -71,39 +71,78 @@
       <!-- Page title -->
       <h1>MCU Easter Eggs & Theories</h1>
 
-  <!-- Submission Form -->
   <section class="user-submission" aria-labelledby="submit-heading">
-    <h2 id="submit-heading">Submit Your Favorite Easter Egg or Theory</h2>
+  <h2 id="submit-heading">Submit Your Favorite Easter Egg or Theory</h2>
+  <p id="form-help">Submissions are reviewed before being posted.</p>
 
-    <div id="form-success" class="form-success" role="status" hidden></div>
+  <div id="form-success" class="form-success" role="status" aria-live="polite" hidden></div>
 
-    <form id="egg-form"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-          novalidate>
+  <form id="egg-form"
+        action="https://formspree.io/f/mgolkade"
+        method="POST"
+        novalidate
+        aria-describedby="form-help">
 
-      <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
+    <!-- Honeypot (spam trap) -->
+    <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-      <label for="title">Title *</label>
-      <input id="title" name="title" type="text" required>
+    <div class="form-field">
+      <label for="submissionType">Submission type <span aria-hidden="true">*</span></label>
+      <select id="submissionType" name="submissionType" required aria-describedby="submissionType-error">
+        <option value="">Select one…</option>
+        <option value="Easter Egg">Easter Egg</option>
+        <option value="Theory">Theory</option>
+      </select>
+      <p class="field-error" id="submissionType-error"></p>
+    </div>
 
-      <label for="where">Where is it from? *</label>
-      <input id="where" name="where" type="text" required>
+    <div class="form-field">
+      <label for="title">Title <span aria-hidden="true">*</span></label>
+      <input id="title" name="title" type="text" required minlength="3" maxlength="80"
+             aria-describedby="title-error">
+      <p class="field-error" id="title-error"></p>
+    </div>
 
-      <label for="details">Details *</label>
-      <textarea id="details" name="details" required></textarea>
+    <div class="form-field">
+      <label for="where">Where is it from? <span aria-hidden="true">*</span></label>
+      <input id="where" name="where" type="text" required minlength="2" maxlength="60"
+             aria-describedby="where-error">
+      <p class="field-error" id="where-error"></p>
+    </div>
 
-      <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+    <div class="form-field">
+      <label for="timestamp">Timestamp (optional)</label>
+      <input id="timestamp" name="timestamp" type="text" placeholder="mm:ss or hh:mm:ss"
+             aria-describedby="timestamp-error">
+      <p class="field-error" id="timestamp-error"></p>
+    </div>
 
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+    <div class="form-field">
+      <label for="details">Details <span aria-hidden="true">*</span></label>
+      <textarea id="details" name="details" required minlength="15" maxlength="800"
+                rows="5" aria-describedby="details-error"></textarea>
+      <p class="field-error" id="details-error"></p>
+    </div>
 
-  <!-- Approved Community Posts Display -->
-  <section class="community-submissions" aria-labelledby="community-heading">
-    <h2 id="community-heading">Community Submissions</h2>
-    <ul id="submission-list" class="submission-list"></ul>
-  </section>
+    <div class="form-field">
+      <label for="creditName">Name to credit (optional)</label>
+      <input id="creditName" name="creditName" type="text" maxlength="40">
+    </div>
+
+    <div class="captcha-wrap">
+      <div class="g-recaptcha" data-sitekey="6Lf4l2ssAAAAAFVeo_Qsh6QXKsUCUMTl9rSqZF0X"></div>
+      <p class="field-error" id="captcha-error"></p>
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</section>
+
+<!-- Approved posts (auto display) -->
+<section class="community-submissions" aria-labelledby="community-heading">
+  <h2 id="community-heading">Community Submissions</h2>
+  <ul id="submission-list" class="submission-list"></ul>
+</section>
 
 </main>
 
