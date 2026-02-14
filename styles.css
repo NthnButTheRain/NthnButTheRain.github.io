@@ -219,6 +219,7 @@ h1, .subtitle {
   gap: 0.75rem;
   align-items: end;
   max-width: 760px;
+  margin: 0 auto;
 }
 
 #egg-form .form-field {
@@ -270,7 +271,7 @@ h1, .subtitle {
 }
 
 .user-submission #details {
-  min-height: 90px;
+  min-height: 60px;
 }
 
 .form-field input,
