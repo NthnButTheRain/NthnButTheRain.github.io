@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const type = escapeHtml(item.submissionType || "Theory");
   const title = escapeHtml(item.title || "");
-  const source = escapeHtml(item.source || "");
+  const relatedTo = escapeHtml(item.relatedTo || "");
   const details = escapeHtml(item.details || "");
 
   const credit = item.creditName ? escapeHtml(item.creditName) : "";
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
       </h3>
 
       <p class="archive-meta">
-        <span class="archive-label">Source:</span>
-        ${source}${ts ? ` <span class="archive-timestamp">• ${ts}</span>` : ""}
+        <span class="archive-label">Related To:</span>
+        ${relatedTo}${ts ? ` <span class="archive-timestamp">• ${ts}</span>` : ""}
       </p>
 
       <div class="archive-details">
@@ -92,14 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return "";
       }
     },
-    source: {
-      el: document.getElementById("source"),
-      err: document.getElementById("source-error"),
+    relatedTo: {
+      el: document.getElementById("relatedTo"),
+      err: document.getElementById("relatedTo-error"),
       validate: (v) => {
         const t = v.trim();
         if (!t) return "Please tell us what it’s from.";
         if (t.length < 2) return "This must be at least 2 characters.";
-        if (t.length > 60) return "Please keep this to 60 characters or less.";
+        if (t.length > 60) return "Please keep this to 100 characters or less.";
         return "";
       }
     },
