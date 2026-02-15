@@ -17,54 +17,38 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!listEl) return;
 
   const li = document.createElement("li");
-  li.className = "submission-card"; // add styling hook
 
-  const type = escapeHtml(item.submissionType || "Submission");
+  const type = escapeHtml(item.submissionType || "Theory");
   const title = escapeHtml(item.title || "");
   const where = escapeHtml(item.where || "");
   const details = escapeHtml(item.details || "");
 
-  const tsText = item.timestamp ? escapeHtml(item.timestamp) : "";
-  const hasTimestamp = Boolean(tsText);
-
-  const creditName = item.creditName ? escapeHtml(item.creditName) : "";
-  const hasCredit = Boolean(creditName);
-
-  // Unique-ish id for aria-labelledby (safe even if missing fields)
-  const safeId = `sub-${Math.random().toString(36).slice(2, 9)}`;
+  const credit = item.creditName ? escapeHtml(item.creditName) : "";
+  const ts = item.timestamp ? escapeHtml(item.timestamp) : "";
 
   li.innerHTML = `
-    <article class="submission-entry" aria-labelledby="${safeId}">
-      <header class="submission-header">
-        <p class="submission-type">${type}:</p>
-        <h3 id="${safeId}" class="submission-title">${title}</h3>
-      </header>
+    <article class="archive-entry">
+      <h3 class="archive-title">
+        <span class="archive-label">${type}:</span> ${title}
+      </h3>
 
-      <dl class="submission-meta">
-        <div class="meta-row">
-          <dt>Where is it from?</dt>
-          <dd>
-            ${where}
-            ${hasTimestamp ? `<span class="meta-sep"> • </span><span class="timestamp">${tsText}</span>` : ""}
-          </dd>
-        </div>
-      </dl>
+      <p class="archive-meta">
+        <span class="archive-label">Source:</span>
+        ${where}${ts ? ` <span class="archive-timestamp">• ${ts}</span>` : ""}
+      </p>
 
-      <section class="submission-body" aria-label="Details">
-        <h4 class="visually-hidden">Details</h4>
-        <p class="submission-details">${details}</p>
-      </section>
+      <div class="archive-analysis">
+        <p class="archive-label">Analysis:</p>
+        <p class="archive-text">${details}</p>
+      </div>
 
-      ${hasCredit ? `
-        <footer class="submission-footer">
-          <p class="submitted-by">Submitted by ${creditName}</p>
-        </footer>
-      ` : ""}
+      ${credit ? `<p class="archive-credit">Submitted by ${credit}</p>` : ""}
     </article>
   `;
 
   listEl.appendChild(li);
 }
+
   
   async function loadApproved() {
     try {
