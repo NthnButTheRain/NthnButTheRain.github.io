@@ -136,16 +136,11 @@ h1, .subtitle {
   text-align: center;
   font-size: 0.8rem;
   line-height: 1.6;
+  color: #333333;
 }
 
 .site-footer nav {
   margin-bottom: 0.75rem;
-}
-
-.site-footer a {
-  margin: 0 0.5rem;
-  text-decoration: none;
-  color: #333333;
 }
 
 .disclaimer {
