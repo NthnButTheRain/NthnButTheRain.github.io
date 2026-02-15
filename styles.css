@@ -226,7 +226,7 @@ h1, .subtitle {
   margin-bottom: 0;
 }
 
-#egg-form .form-field:has(#details) {
+#egg-form .form-field:has(#analysis) {
   grid-column: 1 / span 3;
 }
 
@@ -270,7 +270,7 @@ h1, .subtitle {
   font-size: 0.95rem;
 }
 
-.user-submission #details {
+.user-submission #analysis {
   min-height: 60px;
 }
 
@@ -380,7 +380,7 @@ h1, .subtitle {
     max-width: 100%;
   }
 
-  #egg-form .form-field:has(#details),
+  #egg-form .form-field:has(#analysis),
   #egg-form .form-field:has(#creditName),
   #egg-form .captcha-wrap,
   #egg-form .btn {
