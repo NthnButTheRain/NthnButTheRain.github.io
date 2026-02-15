@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!listEl) return;
 
   const li = document.createElement("li");
+  li.className = "entry-card";
 
   const type = escapeHtml(item.submissionType || "Theory");
   const title = escapeHtml(item.title || "");
@@ -27,22 +28,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const ts = item.timestamp ? escapeHtml(item.timestamp) : "";
 
   li.innerHTML = `
-    <article class="archive-entry">
-      <h3 class="archive-title">
-        <span class="archive-label">${type}:</span> ${title}
-      </h3>
+    <article>
+      <header class="entry-head">
+        <h3 class="entry-title">${title}</h3>
 
-      <p class="archive-meta">
-        <span class="archive-label">Related To:</span>
-        ${relatedTo}${ts ? ` <span class="archive-timestamp">• ${ts}</span>` : ""}
-      </p>
+        <p class="entry-meta">
+          <span class="tag">${type}</span>
+          <span aria-hidden="true">•</span>
+          <span class="project">${relatedTo}</span>
+          ${ts ? `<span aria-hidden="true">•</span><span class="timecode">Timestamp: ${ts}</span>` : ""}
+        </p>
+      </header>
 
-      <div class="archive-details">
-        <p class="archive-label">Details:</p>
-        <p class="archive-text">${details}</p>
-      </div>
+      <p class="entry-details">${details}</p>
 
-      ${credit ? `<p class="archive-credit">Submitted by ${credit}</p>` : ""}
+      ${credit ? `
+        <footer class="entry-foot">
+          <p class="entry-credit">Submitted by: ${credit}</p>
+        </footer>
+      ` : ""}
     </article>
   `;
 
