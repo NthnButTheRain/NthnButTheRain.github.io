@@ -316,6 +316,42 @@ h1, .subtitle {
   max-width: 900px;
 }
 
+/* Archive-style submission layout */
+.submission-entry {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.submission-title-line {
+  margin: 0;
+}
+
+.submission-label {
+  display: inline-block;
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.submission-source {
+  margin: 0;
+  color: #333;
+}
+
+.submission-timestamp {
+  color: #777;
+  font-style: italic;
+}
+
+.submission-details p {
+  margin: 0.25rem 0 0;
+}
+
+.submission-credit {
+  margin: 0.25rem 0 0;
+  color: #777;
+  font-size: 0.95rem;
+}
+
 .submission-list li {
   padding: 0.9rem 1rem;
   border: 1px solid #ddd;
