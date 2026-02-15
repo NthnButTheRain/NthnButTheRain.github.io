@@ -103,6 +103,10 @@ h1, .subtitle {
   font-weight: 600;
 }
 
+.category-heading::before {
+  content: attr(data-marker) " ";
+}
+
 .meta {
   display: block;
   color: #777;
