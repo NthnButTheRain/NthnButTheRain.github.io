@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const type = escapeHtml(item.submissionType || "Theory");
   const title = escapeHtml(item.title || "");
-  const where = escapeHtml(item.where || "");
-  const details = escapeHtml(item.details || "");
+  const source = escapeHtml(item.source || "");
+  const analysis = escapeHtml(item.analysis || "");
 
   const credit = item.creditName ? escapeHtml(item.creditName) : "";
   const ts = item.timestamp ? escapeHtml(item.timestamp) : "";
@@ -92,12 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return "";
       }
     },
-    where: {
-      el: document.getElementById("where"),
-      err: document.getElementById("where-error"),
+    source: {
+      el: document.getElementById("source"),
+      err: document.getElementById("source-error"),
       validate: (v) => {
         const t = v.trim();
-        if (!t) return "Please tell us what movie/show it’s from.";
+        if (!t) return "Please tell us what it’s from.";
         if (t.length < 2) return "This must be at least 2 characters.";
         if (t.length > 60) return "Please keep this to 60 characters or less.";
         return "";
@@ -113,18 +113,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return ok ? "" : "Use mm:ss or hh:mm:ss (example: 00:42:10).";
       }
     },
-    details: {
-      el: document.getElementById("details"),
-      err: document.getElementById("details-error"),
+    analysis: {
+      el: document.getElementById("analysis"),
+      err: document.getElementById("analysis-error"),
       validate: (v) => {
         const t = v.trim();
-        if (!t) return "Details are required.";
+        if (!t) return "Analysis is required.";
         if (t.length < 15) return "Please add more detail (15+ characters).";
-        if (t.length > 800) return "Please keep details to 800 characters or less.";
+        if (t.length > 800) return "Please keep analysis to 800 characters or less.";
         return "";
       }
-    }
-  };
+    },
 
   function setError(key, msg) {
     const f = fields[key];
