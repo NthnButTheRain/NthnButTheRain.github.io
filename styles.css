@@ -226,7 +226,7 @@ h1, .subtitle {
   margin-bottom: 0;
 }
 
-#egg-form .form-field:has(#analysis) {
+#egg-form .form-field:has(#details) {
   grid-column: 1 / span 3;
 }
 
@@ -270,7 +270,7 @@ h1, .subtitle {
   font-size: 0.95rem;
 }
 
-.user-submission #analysis {
+.user-submission #details {
   min-height: 60px;
 }
 
@@ -341,11 +341,11 @@ h1, .subtitle {
   font-style: italic;
 }
 
-.archive-analysis {
+.archive-details {
   margin: 0;
 }
 
-.archive-analysis .archive-label {
+.archive-details .archive-label {
   margin: 0 0 0.2rem;
 }
 
@@ -380,7 +380,7 @@ h1, .subtitle {
     max-width: 100%;
   }
 
-  #egg-form .form-field:has(#analysis),
+  #egg-form .form-field:has(#details),
   #egg-form .form-field:has(#creditName),
   #egg-form .captcha-wrap,
   #egg-form .btn {
