@@ -104,7 +104,7 @@ h1, .subtitle {
 }
 
 .category-heading::before {
-  content: attr(data-marker) " ";
+  content: "* ";
 }
 
 .meta {
