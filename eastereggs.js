@@ -14,21 +14,58 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderApprovedItem(item) {
-    if (!listEl) return;
+  if (!listEl) return;
 
-    const li = document.createElement("li");
-    const credit = item.creditName ? ` • Submitted by ${escapeHtml(item.creditName)}` : "";
-    const ts = item.timestamp ? ` • ${escapeHtml(item.timestamp)}` : "";
+  const li = document.createElement("li");
+  li.className = "submission-card"; // add styling hook
 
-    li.innerHTML = `
-      <strong>${escapeHtml(item.submissionType)}:</strong> ${escapeHtml(item.title)}<br>
-      <em>${escapeHtml(item.where)}${ts}</em>${credit}<br>
-      <p>${escapeHtml(item.details)}</p>
-    `;
+  const type = escapeHtml(item.submissionType || "Submission");
+  const title = escapeHtml(item.title || "");
+  const where = escapeHtml(item.where || "");
+  const details = escapeHtml(item.details || "");
 
-    listEl.appendChild(li);
-  }
+  const tsText = item.timestamp ? escapeHtml(item.timestamp) : "";
+  const hasTimestamp = Boolean(tsText);
 
+  const creditName = item.creditName ? escapeHtml(item.creditName) : "";
+  const hasCredit = Boolean(creditName);
+
+  // Unique-ish id for aria-labelledby (safe even if missing fields)
+  const safeId = `sub-${Math.random().toString(36).slice(2, 9)}`;
+
+  li.innerHTML = `
+    <article class="submission-entry" aria-labelledby="${safeId}">
+      <header class="submission-header">
+        <p class="submission-type">${type}:</p>
+        <h3 id="${safeId}" class="submission-title">${title}</h3>
+      </header>
+
+      <dl class="submission-meta">
+        <div class="meta-row">
+          <dt>Where is it from?</dt>
+          <dd>
+            ${where}
+            ${hasTimestamp ? `<span class="meta-sep"> • </span><span class="timestamp">${tsText}</span>` : ""}
+          </dd>
+        </div>
+      </dl>
+
+      <section class="submission-body" aria-label="Details">
+        <h4 class="visually-hidden">Details</h4>
+        <p class="submission-details">${details}</p>
+      </section>
+
+      ${hasCredit ? `
+        <footer class="submission-footer">
+          <p class="submitted-by">Submitted by ${creditName}</p>
+        </footer>
+      ` : ""}
+    </article>
+  `;
+
+  listEl.appendChild(li);
+}
+  
   async function loadApproved() {
     try {
       const res = await fetch("approved-submissions.json", { cache: "no-store" });
