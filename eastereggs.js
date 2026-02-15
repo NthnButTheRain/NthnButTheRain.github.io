@@ -34,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <p class="archive-meta">
         <span class="archive-label">Source:</span>
-        ${where}${ts ? ` <span class="archive-timestamp">• ${ts}</span>` : ""}
+        ${source}${ts ? ` <span class="archive-timestamp">• ${ts}</span>` : ""}
       </p>
 
       <div class="archive-analysis">
         <p class="archive-label">Analysis:</p>
-        <p class="archive-text">${details}</p>
+        <p class="archive-text">${analysis}</p>
       </div>
 
       ${credit ? `<p class="archive-credit">Submitted by ${credit}</p>` : ""}
