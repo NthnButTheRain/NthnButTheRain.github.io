@@ -217,19 +217,44 @@ h1, .subtitle {
   margin-top: 0;
 }
 
+.az-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.az-nav a {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.az-nav a:hover,
+.az-nav a:focus {
+  text-decoration: underline;
+}
+
+.letter-heading {
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
 .character-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
-}
-
-.character-list li {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem 1rem;
 }
 
 .character-list a {
   text-decoration: none;
-  font-weight: 600;
 }
 
 .character-list a:hover,
