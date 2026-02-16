@@ -4,17 +4,17 @@ const pages = [
   { title: "TV", url: "tv.html", keywords: "show tv series streaming disney+ special presentation netflix abc" },
   { title: "Chronology", url: "chronology.html", keywords: "timeline order chronological watch order" },
   { title: "Characters", url: "characters.html", keywords: "heroes villains profiles" },
-  { title: "Easter Eggs & Theories", url: "eastereggs.html", keywords: "hidden details theories easter egg community archive" },
+  { title: "Easter Eggs & Theories", url: "eastereggs.html", keywords: "hidden details theories easter egg community archive" }
 
   // Movies
   { title: "Iron Man (2008)", url: "movies.html#iron-man", keywords: "tony stark iron man arc reactor obadiah stane james rhodes happy hogan pepper potts" },
   { title: "Captain America: The First Avenger (2011)", url: "movies.html#captain-america-first-avenger", keywords: "steve rogers captain america red skull peggy carter bucky barnes hydra" },
-  { title: "The Avengers (2012)", url: "movies.html#avengers", keywords: "avengers assemble loki thor captain america steve rogers iron man tony stark hawkeye clint barton black widow natasha romanoff the hulk bruce banner nick fury phil coulson maria hill" },
+  { title: "The Avengers (2012)", url: "movies.html#avengers", keywords: "avengers assemble loki thor captain america steve rogers iron man tony stark hawkeye clint barton black widow natasha romanoff the hulk bruce banner nick fury phil coulson maria hill" }
 
   // TV Shows
   { title: "WandaVision", url: "tv.html#wandavision", keywords: "wanda vision westview sitcom agatha harkness billy tommy pietro" },
   { title: "Loki", url: "tv.html#loki", keywords: "tva variants multiverse sylvie mobius" },
-  { title: "Hawkeye", url: "tv.html#hawkeye", keywords: "clint barton kate bishop yelena belova kingpin wilson fisk echo maya lopez" },
+  { title: "Hawkeye", url: "tv.html#hawkeye", keywords: "clint barton kate bishop yelena belova kingpin wilson fisk echo maya lopez" }
 
   // Characters
   { title: "Tony Stark / Iron Man", url: "characters/iron-man.html", keywords: "tony stark iron man" },
@@ -22,10 +22,10 @@ const pages = [
   { title: "Natasha Romanoff / Black Widow", url: "characters.html", keywords: "natasha romanoff black widow" }
 
   // Coming Soon
-  { title: "Daredevil: Born Again — Season 2", url: "tv.html#daredevil-born-again-season-2", keywords: "daredevil matt murdock born again season 2"},
-  { title: "X-Men '97 — Season 2", url: "tv.html#xmen-97-season-2", keywords: "xmen x-men 97 season 2 mutants"},
-  { title: "Your Friendly Neighborhood Spider-Man — Season 2", url: "tv.html#friendly-neighborhood-spiderman-season-2", keywords: "spiderman spider-man peter parker season 2 animated"},
-  { title: "VisionQuest", url: "tv.html#visionquest", keywords: "vision white vision wanda sequel"}
+  { title: "Daredevil: Born Again — Season 2", url: "tv.html#daredevil-born-again-season-2", keywords: "daredevil matt murdock born again season 2" },
+  { title: "X-Men '97 — Season 2", url: "tv.html#xmen-97-season-2", keywords: "xmen x-men 97 season 2 mutants" },
+  { title: "Your Friendly Neighborhood Spider-Man — Season 2", url: "tv.html#friendly-neighborhood-spiderman-season-2", keywords: "spiderman spider-man peter parker season 2 animated" },
+  { title: "VisionQuest", url: "tv.html#visionquest", keywords: "vision white vision wanda sequel" }
 ];
 
 const resultsList = document.getElementById("results-list");
