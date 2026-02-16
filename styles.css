@@ -107,6 +107,16 @@ h1, .subtitle {
   content: attr(data-marker) " ";
 }
 
+.characters-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #F0131E;
+}
+
+.characters-header .category-heading {
+  margin-bottom: 0.75rem;
+}
+
 .meta {
   display: block;
   color: #777;
