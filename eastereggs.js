@@ -13,40 +13,79 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("'", "&#039;");
   }
 
-  function renderApprovedItem(item) {
+ function renderApprovedItem(item) {
   if (!listEl) return;
 
-  const li = document.createElement("li"); // no class needed; CSS targets .submission-list li
+  const li = document.createElement("li");
 
-  const type = escapeHtml(item.submissionType || "Theory");
-  const title = escapeHtml(item.title || "");
-  const relatedTo = escapeHtml(item.relatedTo || "");
-  const details = escapeHtml(item.details || "");
+  const type = (item.submissionType || "Theory").toString();
+  const title = (item.title || "").toString();
+  const relatedTo = (item.relatedTo || "").toString();
+  const details = (item.details || "").toString();
+  const credit = (item.creditName || "").toString();
+  const ts = (item.timestamp || "").toString();
 
-  const credit = item.creditName ? escapeHtml(item.creditName) : "";
-  const ts = item.timestamp ? escapeHtml(item.timestamp) : "";
+  const article = document.createElement("article");
+  article.className = "archive-entry";
 
-  li.innerHTML = `
-    <article class="archive-entry">
-      <h3 class="archive-title">${type}: ${title}</h3>
+  const h3 = document.createElement("h3");
+  h3.className = "archive-title";
+  h3.textContent = `${type}: ${title}`;
+  article.appendChild(h3);
 
-      ${relatedTo || ts ? `
-        <p class="archive-meta">
-          ${relatedTo ? `<span class="archive-label">Related To:</span> ${relatedTo}` : ""}
-          ${relatedTo && ts ? ` <span class="archive-timestamp">• ${ts}</span>` : ""}
-          ${!relatedTo && ts ? `<span class="archive-timestamp">${ts}</span>` : ""}
-        </p>
-      ` : ""}
+  // Meta line (Related To + timestamp) only if either exists
+  if (relatedTo || ts) {
+    const meta = document.createElement("p");
+    meta.className = "archive-meta";
 
-      <div class="archive-details">
-        <p class="archive-label">Details:</p>
-        <p class="archive-text">${details}</p>
-      </div>
+    if (relatedTo) {
+      const label = document.createElement("span");
+      label.className = "archive-label";
+      label.textContent = "Related To:";
+      meta.appendChild(label);
 
-      ${credit ? `<p class="archive-credit">Submitted by ${credit}</p>` : ""}
-    </article>
-  `;
+      meta.appendChild(document.createTextNode(" " + relatedTo));
+    }
 
+    if (relatedTo && ts) {
+      const dot = document.createElement("span");
+      dot.className = "archive-timestamp";
+      dot.textContent = `• ${ts}`;
+      meta.appendChild(document.createTextNode(" "));
+      meta.appendChild(dot);
+    } else if (!relatedTo && ts) {
+      const time = document.createElement("span");
+      time.className = "archive-timestamp";
+      time.textContent = ts;
+      meta.appendChild(time);
+    }
+
+    article.appendChild(meta);
+  }
+
+  const detailsWrap = document.createElement("div");
+  detailsWrap.className = "archive-details";
+
+  const detailsLabel = document.createElement("p");
+  detailsLabel.className = "archive-label";
+  detailsLabel.textContent = "Details:";
+  detailsWrap.appendChild(detailsLabel);
+
+  const detailsText = document.createElement("p");
+  detailsText.className = "archive-text";
+  detailsText.textContent = details;
+  detailsWrap.appendChild(detailsText);
+
+  article.appendChild(detailsWrap);
+
+  if (credit) {
+    const creditP = document.createElement("p");
+    creditP.className = "archive-credit";
+    creditP.textContent = `Submitted by ${credit}`;
+    article.appendChild(creditP);
+  }
+
+  li.appendChild(article);
   listEl.appendChild(li);
 }
 
