@@ -45,26 +45,40 @@ if (resultsList) {
   const queryRaw = params.get("q") || "";
   const query = queryRaw.trim().toLowerCase();
 
-  // Clear any existing content
-  resultsList.innerHTML = "";
+  // Clear any existing content safely
+  resultsList.textContent = "";
+
+  const makeLi = (text) => {
+    const li = document.createElement("li");
+    li.textContent = text;
+    return li;
+  };
 
   if (!query) {
-    resultsList.innerHTML = "<li>Please enter a search term.</li>";
+    resultsList.appendChild(makeLi("Please enter a search term."));
   } else {
     const terms = query.split(/\s+/).filter(Boolean);
 
-    const results = pages.filter(page => {
+    const results = pages.filter((page) => {
       const haystack = `${page.title} ${page.keywords}`.toLowerCase();
-      // require ALL words to match (better than “one word matches everything”)
-      return terms.every(t => haystack.includes(t));
+      return terms.every((t) => haystack.includes(t));
     });
 
     if (results.length === 0) {
-      resultsList.innerHTML = `<li>No results found for "<strong>${escapeHtml(queryRaw)}</strong>".</li>`;
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode('No results found for "'));
+      const strong = document.createElement("strong");
+      strong.textContent = queryRaw; // safe
+      li.appendChild(strong);
+      li.appendChild(document.createTextNode('".'));
+      resultsList.appendChild(li);
     } else {
-      results.forEach(page => {
+      results.forEach((page) => {
         const li = document.createElement("li");
-        li.innerHTML = `<a href="${escapeHtml(page.url)}">${escapeHtml(page.title)}</a>`;
+        const a = document.createElement("a");
+        a.href = page.url;          // safe because it’s from your pages array
+        a.textContent = page.title; // safe
+        li.appendChild(a);
         resultsList.appendChild(li);
       });
     }
