@@ -392,9 +392,12 @@ h1, .subtitle {
   font-size: 1.1rem;
 }
 
-.archive-meta,
-.archive-credit {
+.archive-meta {
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: baseline;
 }
 
 .archive-label {
@@ -404,10 +407,6 @@ h1, .subtitle {
 .archive-timestamp {
   color: #777;
   font-style: italic;
-}
-
-.archive-details {
-  margin: 0;
 }
 
 .archive-details .archive-label {
@@ -421,6 +420,7 @@ h1, .subtitle {
 .archive-credit {
   color: #777;
   font-size: 0.95rem;
+  margin: 0;
 }
 
 .submission-list li {
